@@ -11,7 +11,7 @@ $(function() {
     var audioReady = false;
 
     // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
-    var STEAM_SALES = [10, 25, 33, 50, 66, 75, 80, 90]
+    var ROBOT_IMAGES = [1, 2, 3,4,5]
 
     // lolsorandom
     var randomChoice = function(list) {
@@ -21,28 +21,66 @@ $(function() {
     var getRandomInt = function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
+    
+    var setRobot = function(randomRobot){
+        var robot ="";
+        var x = document.getElementById("sale-box");
+        if (randomRobot == 1)
+        {
+                robot = "url('static/img/bender.png')";
+                x.style.height =119;
+                x.style.width = 89;
+        }
+        else if (randomRobot == 2)
+        {
+                robot = "url('static/img/data.png')";
+                x.style.height =157;
+                x.style.width = 120;
+        }
+        else if (randomRobot == 3)
+        {
+                robot = "url('static/img/rd2d.png')";
+                x.style.height =149;
+                x.style.width = 149;
+        }
+             else if (randomRobot == 4)
+        {
+                robot = "url('static/img/ultron.png')";
+                x.style.height =106;
+                x.style.width = 230;
+        }
+             else if (randomRobot == 5)
+        {
+                robot = "url('static/img/terminator.png')";
+                x.style.height =200;
+                x.style.width = 356;
+        }
+        var x = document.getElementById("sale-box")
+        x.style.backgroundImage = robot ;
+    }
 
     var startRain = function () {
         console.log("ARE YOU READY FOR A MIRACLE?");
 
-        // When the image of his holiness loads, show it and animate it.
-        var $saleBox = $('.sale-box');
+        var $saleBox = $('#sale-box');
         // How long in ms to wait until adding another sale box.
-        var interval = 200;
+        var interval = 600;
         var numSales = 0;
 
-        // Adds a sale box at a random x position.
+        // Adds a bender at a random x position.
         var addSale = function() {
             // Get the width every time we add a sale to account for dynamic widths.
             // Thanks ocbaker on github for finding this bug.
             var pageWidth = $('body').width();
-            var maxSales = (pageWidth/70)*5
+            var maxSales = 40;
             var xPos = getRandomInt(0, pageWidth);
-            var percentOff = randomChoice(STEAM_SALES);
+            var randomRobot = randomChoice(ROBOT_IMAGES);
+            setRobot(randomRobot);
+            
             // Just copy the hidden box we had at page load time to make a new box.
             var newSale = $saleBox.clone().show();
-
-            newSale.text("-" + percentOff + "%"); // >js >strings
+            
+            //newSale.text("-" + percentOff + "%"); // >js >strings
 
             newSale.css("left", xPos);
             $('body').append(newSale);
