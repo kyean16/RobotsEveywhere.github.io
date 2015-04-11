@@ -33,14 +33,13 @@ div#sale-box {
     text-align: center;
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;    
 
     pointer-events: none;
     color: #ffffff;
 
     -webkit-animation: sale infinite 2s;
-    animation: sale infinite 2s;
+    animation: sale infinite 4s; /*Speed*/
 
     will-change: top, opacity;
   }
@@ -146,8 +145,8 @@ div#sale-box {
 .sunburst {
     position: absolute;
     z-index: -1;
-    bottom:-10%;
-    right: -60%;
+    bottom:-50%;
+    right: -25%;
 }
 
 .sunburst .outer {

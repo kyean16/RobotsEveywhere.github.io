@@ -11,7 +11,7 @@ $(function() {
     var audioReady = false;
 
     // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
-    var ROBOT_IMAGES = [1, 2, 3,4,5]
+    var ROBOT_IMAGES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     // lolsorandom
     var randomChoice = function(list) {
@@ -54,6 +54,36 @@ $(function() {
                 robot = "url('static/img/terminator.png')";
                 x.style.height =200;
                 x.style.width = 356;
+        }
+                     else if (randomRobot == 6)
+        {
+                robot = "url('static/img/bladerunner.png')";
+                x.style.height =256;
+                x.style.width = 400;
+        }
+                     else if (randomRobot == 7)
+        {
+                robot = "url('static/img/giant.png')";
+                x.style.height =113;
+                x.style.width = 200;
+        }
+                     else if (randomRobot == 8)
+        {
+                robot = "url('static/img/hall.png')";
+                x.style.height =125;
+                x.style.width = 200;
+        }
+                     else if (randomRobot == 9)
+        {
+                robot = "url('static/img/optimus.png')";
+                x.style.height =225;
+                x.style.width = 300;
+        }
+                     else if (randomRobot == 10)
+        {
+                robot = "url('static/img/walle.png')";
+                x.style.height =240;
+                x.style.width = 300;
         }
         var x = document.getElementById("sale-box")
         x.style.backgroundImage = robot ;
